@@ -1,0 +1,9 @@
+<h1 style="text-align:center;color:#0080FF;font-weight:bold;font-size:40px">CPU Simulator</h1>
+<div><p style="font-size:20px;color:#FF9D6F">PC,IR寄存器的作用</p>
+<p style="font-size:18px;color:#BE77FF;padding-left:25px;">PC寄存器用來計数下一个指令的地址</p>
+<p style="font-size:18px;color:#BE77FF;padding-left:25px;">IR寄存器用來加载指令</p>
+<p style="font-size:20px;color:#FF9D6F">ACC寄存器的全称与作用</p>
+<p style="font-size:18px;color:#BE77FF;padding-left:25px;">ACC:Accumulator（累加器）,用来储存CPU计算时产生的中间结果,这样就可以省去计算过程要把数据写入内存所需的时间</p>
+<p style="font-size:20px;color:#FF9D6F">LOD #3指令的Fetch-Execute cycle</p>
+<p style="font-size:18px;color:#BE77FF;padding-left:25px;">首先,IR寄存器加载到LOD #3指令,并且传到Decoder去decode这条指令，这就是Fetch-Cycle</p>
+<p style="font-size:18px;color:#BE77FF;padding-left:25px;">然后,</p></div>
