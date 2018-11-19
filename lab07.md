@@ -2,12 +2,12 @@
 <p style="color:black;">18340128 罗濠铭</p>
 <p style="font-size:23px;color:black;">实验目的</p>
 
-<ul style="color:black;">
+<ul style="color:black;"> 
 
-<li>理解冯·诺伊曼计算机的结构
-<li>理解机器指令的构成
-<li>理解机器指令执行周期
-<li>用汇编编写简单程序
+<li>理解冯·诺伊曼计算机的结构</li>
+<li>理解机器指令的构成</li>
+<li>理解机器指令执行周期</li>
+<li>用汇编编写简单程序</li>
 
 </ul>
 
