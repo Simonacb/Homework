@@ -1,5 +1,21 @@
-<h1 style="text-align:center;color:#0080FF;font-weight:bold;font-size:40px">CPU Simulator</h1>
-<div><h2 style="text-align:center;">task 1</h2><p style="font-size:20px;color:#FF9D6F">PC,IR寄存器的作用</p>
+<h1 style="text-align:center;color:#0080FF;font-weight:bold;font-size:40px">PIPPIN实验报告</h1>
+<p style="color:black;">18340128 罗濠铭</p>
+<p style="font-size:23px;color:black;">实验目的</p>
+<ul style="color:black">
+    <li>理解冯·诺伊曼计算机的结构
+    <li>理解机器指令的构成
+    <li>理解机器指令执行周期
+    <li>用汇编编写简单程序
+</ul>
+<div><h2 style="text-align:center;">task 1</h2>
+<p style="font-size:20px;color:#FF9D6F">PROGRAM 1 流程</p>
+<p style="font-size:18px;color:#BE77FF;padding-left:25px;">首先，输入代码</p>
+<img src="images/lab7.11.png">
+<p style="font-size:18px;color:#BE77FF;padding-left:25px;">然候运行程序</p>
+<img src="images/lab7.1.png">
+<p style="font-size:18px;color:#BE77FF;padding-left:25px;">运行结果</p>
+<img src="images/lab7.21.png">
+<p style="font-size:20px;color:#FF9D6F">PC,IR寄存器的作用</p>
 <p style="font-size:18px;color:#BE77FF;padding-left:25px;">PC寄存器用來計数下一个指令的地址</p>
 <p style="font-size:18px;color:#BE77FF;padding-left:25px;">IR寄存器用來加载指令</p>
 <p style="font-size:20px;color:#FF9D6F">ACC寄存器的全称与作用</p>
@@ -30,6 +46,11 @@
 </div>
 
 <div><h2 style="text-align:center;">task 2</h2>
+<p style="font-size:20px;color:#FF9D6F">PROGRAM 2的流程</p>
+<p style="font-size:18px;color:#BE77FF;padding-left:25px;">首先，输入代码</p>
+<img src="images/lab7.31.png">
+<p style="font-size:18px;color:#BE77FF;padding-left:25px;">然候运行到最后</p>
+<img src="images/lab7.5.png">
 <p style="font-size:20px;color:#FF9D6F">Program 2程序的作用</p>
 <p style="font-size:18px;color:#BE77FF;padding-left:25px;">将一个变量值减到1为止</p>
 <img src="images/lab7.5.png">
