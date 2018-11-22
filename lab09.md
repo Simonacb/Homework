@@ -23,7 +23,7 @@ $$ \lim_{n\rightarrow0}\frac{\sqrt[2]{1+x^2}-1}{1-cos(x)} $$
 <p>求隐函数微分</p>
 
 
-$$ y = x    + \arctany $$
+$$ y = x + \arctan y $$
 
 <p>结果</p>
 <img src="images/integrate.jpg">
@@ -46,7 +46,7 @@ $$ A = \left[
    \right]  
 $$
    
-$$ A^-1 = \left[
+$$ A^(-1) = \left[
    \begin{matrix}
    -4.5 & 7 & -1.5 \\
    -2 & 4 & -1 \\
@@ -66,7 +66,7 @@ $$ A = \left[
         -3 & -6 & -7 & 2 \\
         3 & 3 & 0 & -4 \\
         -5 & -3 & 2 & 9
-        \end{matrix0}
+        \end{matrix}
         \right]
 $$
 
