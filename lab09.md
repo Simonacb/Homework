@@ -23,7 +23,7 @@ $$ \lim_{n\rightarrow0}\frac{\sqrt[2]{1+x^2}-1}{1-cos(x)} $$
 <p>求隐函数微分</p>
 
 
-$$ y = x+\arctany $$
+$$ y = x    + \arctany $$
 
 <p>结果</p>
 <img src="images/integrate.jpg">
@@ -37,7 +37,7 @@ $$ \frac{1}{1+\tan(x^2)} $$
 <h3>线性代数题</h3>
 <p>求两个矩阵的乘积</p>
 
-$$ \left[
+$$ A = \left[
    \begin{matrix}
    0 & 1 & 2 \\
    1 & 0 & 3 \\
@@ -46,7 +46,7 @@ $$ \left[
    \right]  
 $$
    
-$$ \left[
+$$ A^-1 = \left[
    \begin{matrix}
    -4.5 & 7 & -1.5 \\
    -2 & 4 & -1 \\
@@ -57,3 +57,31 @@ $$
 
 <p>结果</p>
 <img src="images/matrix1.jpg">
+
+<p>求出Ax=b中x的解</p>
+
+$$ A = \left[
+        \begin{matrix}
+        1 & 3 & 4 & 0 \\
+        -3 & -6 & -7 & 2 \\
+        3 & 3 & 0 & -4 \\
+        -5 & -3 & 2 & 9
+        \end{matrix0}
+        \right]
+$$
+
+$$ b = \left[
+       \begin{matrix}
+       1 \\
+       -2 \\
+       -1 \\
+       2
+       \end{matrix}
+       \right]
+$$ 
+
+<p>结果</p>
+<img src="images/matrix2.jpg">
+
+<h2>实验小结</h2>
+<p>确实Python是一种很好的语言，凭着其庞大的后援（库），确实值得我学习这门编程语言</p>
