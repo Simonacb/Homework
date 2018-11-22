@@ -15,7 +15,7 @@
 <h2>使用Python求解作业的题目</h2>
 <p>因为没有高数，所以只能在数分里面找题目</p>
 <p>求极限</p>
-\lim_{n\rightarrow0}\frac{\sqrt[2]{1+x*x}-1}{1-cos(x)}
+$$ \lim_{n\rightarrow0} \frac{\sqrt[2]{1+x*x}-1}{1-cos(x)} $$
 
 <p>结果</p>
 <img src="images/limit.jpg">
@@ -23,5 +23,3 @@
 
 
 \int(x+\arctany)
-
-$$ \int {\frac{x^2+5x+4}{x^4+5x^2+4}} {\rm d}x = \frac{5}{6} \ln\frac{x^2+1}{x^2+4} + \arctan x $$ 
