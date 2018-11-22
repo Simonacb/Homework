@@ -11,3 +11,15 @@
     <li>编程工具:Python(winpython)</li>
     <li>操作系统:Windows</li>
 </ul>
+
+<h2>使用Python求解作业的题目</h2>
+<p>因为没有高数，所以只能在数分里面找题目</p>
+<p>求极限</p>
+\lim_{n\rightarrow0}\frac{\sqrt[2]{1+x*x}-1}{1-cos(x)}
+
+<p>结果</p>
+<img src="images/limit.jpg">
+<p>求隐函数微分</p>
+
+
+\int(x+\arctany)
