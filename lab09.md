@@ -23,3 +23,5 @@
 
 
 \int(x+\arctany)
+
+$$ \int {\frac{x^2+5x+4}{x^4+5x^2+4}} {\rm d}x = \frac{5}{6} \ln\frac{x^2+1}{x^2+4} + \arctan x $$ 
