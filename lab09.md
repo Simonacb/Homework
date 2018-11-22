@@ -46,7 +46,7 @@ $$ A = \left[
    \right]  
 $$
    
-$$ A^(-1) = \left[
+$$ A^-1 = \left[
    \begin{matrix}
    -4.5 & 7 & -1.5 \\
    -2 & 4 & -1 \\
