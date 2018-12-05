@@ -9,16 +9,16 @@
 #define SNAKE_FOOD '$'
 #define WALL_CELL '*'
 
-//矰ǐ : y = 1(down), y = -1(up), x = -1(left), x = 1(right), x = 0 or y = 0 (no move)
+//蛇的走向 : y = 1(down), y = -1(up), x = -1(left), x = 1(right), x = 0 or y = 0 (no move)
 void snakeMove(int x,int y);
-//竚 
+//放置食物 
 void put_money(int []);
-int XY[2];//竚 
+int XY[2];//存放食物的位置 
 
 void output(void);
-//村栏挡 
+//游戲結束 
 int gameover(void);
-//ゴ瓜 
+//打印地圖 
 void print_map(void);
 
 void eat(void);
@@ -47,17 +47,17 @@ int main(){
 	print_map();
 	while(!gameover()){
 		scanf("%s",&ch);
-		switch(ch){//耞︽ǐよ 
-			case 'A'://オǐ 
+		switch(ch){//判斷行走方向 
+			case 'A'://向左走 
 				snakeMove(-1,0);
 				break;
-			case 'S'://ǐ 
+			case 'S'://向下走 
 				snakeMove(0,1);
 				break;
-			case 'D'://ǐ 
+			case 'D'://向右走 
 				snakeMove(1,0);
 				break;
-			case 'W'://ǐ 
+			case 'W'://向上走 
 				snakeMove(0,-1);
 				break;
 		}
@@ -67,40 +67,40 @@ int main(){
 	printf("Game Over");
 }
 
-//ゴ瓜  沮矰竚ゴ矰,癘魁矰竚τㄤ緇竚干┪娩 
+//打印地圖  根據蛇位置打印蛇,並且記錄蛇的位置而在其餘位置補上空格或邊界 
 void print_map(void){
 	int i = 0, j = 0, k = 0, g = 0, h = 0, z = 0;
 	for(i=0;i<12;i++){
 		for(j=0;j<12;j++){
-			for(k=0;k<snakeLength;k++){//耞矰ぃ硂竚τゴ 
+			for(k=0;k<snakeLength;k++){//判斷蛇在不在這個位置而打印 
 				if(k==snakeLength-1 && j==snakeX[k] && i==snakeY[k]){
-					for(h=0;h<snakeLength-1;h++){//耞矰琌疾ō砰 琌杠夹癘Z硄矰繷ゴ 
+					for(h=0;h<snakeLength-1;h++){//判斷蛇是否撞到身體 是的話標記Z通知蛇頭已打印 
 						if(snakeX[h]==snakeX[snakeLength-1] && snakeY[h]==snakeY[snakeLength-1]){
 							z=1;
 						}
 					}
-					if(z==0 && (snakeX[k]==0 || snakeX[k]==11 || snakeY[k]==0 || snakeY[k]==11)){//沮矰繷临⊿ゴ 璝矰繷疾毁锚夹癘竒ゴ矰繷 
+					if(z==0 && (snakeX[k]==0 || snakeX[k]==11 || snakeY[k]==0 || snakeY[k]==11)){//根據蛇頭還沒打印 若蛇頭撞到障礙標記已經打印蛇頭 
 						g=0;
 					}
 				
-					else if(z==0){//ヘ玡ゎ 矰繷临⊿ゴ ┮ゴ矰繷竚 
+					else if(z==0){//到目前為止 蛇頭還沒打印 所以打印蛇頭位置 
 						printf("%c",SNAKE_HEAD);
-						g=1; //夹粁ゴ矰 
+						g=1; //標誌打印了蛇 
 					}
 				}
 				else if(j==snakeX[k] && i==snakeY[k]){
 					printf("%c",SNAKE_BODY); 
-					g=1;//夹粁ゴ矰 
+					g=1;//標誌打印了蛇 
 				}
 			}
-			if(j==(XY[0]) && i==(XY[1])){//耞竚ゴ 
+			if(j==(XY[0]) && i==(XY[1])){//判斷食物位置後打印 
 				printf("%c",SNAKE_FOOD);
 				g=1;
 			}
-			if(g==0 && (i==0 || i==11)  || g==0 && (j==0 || j==11)){//⊿Τゴ矰杠干瓜  毁锚  map: if(g==0){ 
+			if(g==0 && (i==0 || i==11)  || g==0 && (j==0 || j==11)){//沒有打印蛇的話補上地圖  障礙  map版: if(g==0){ 
 				printf("%c",WALL_CELL);								//											printf("%c",map[i][j]);
 			}														//											}
-			else if(g==0 && (i>0 && i<12) || g==0 && (j>0 && j<12)){//⊿Τゴ矰杠干瓜  				
+			else if(g==0 && (i>0 && i<12) || g==0 && (j>0 && j<12)){//沒有打印蛇的話補上地圖 空格 				
 				printf("%c",BLANK_CELL);
 			}
 			g=0;
@@ -110,51 +110,51 @@ void print_map(void){
 	
 }
 
-//北矰ǐ笆 矰ō砰穦沮玡ō砰ㄓ耞ǐ,矰繷穦虫縒块τǐ 
+//控制蛇的走動 蛇的身體會根據前面的身體來判斷走向,蛇頭自己會單獨的按輸入的指令而走 
 void snakeMove(int x,int y){
 	int i = 0;
 	for(i=0;i<snakeLength-1;i++){
-		if((snakeX[i]+1)==snakeX[i+1]){//矰ō巨
+		if((snakeX[i]+1)==snakeX[i+1]){//蛇身操作
 			snakeX[i]+=1;
 		}
-		if((snakeX[i]-1)==snakeX[i+1]){//矰ō巨 
+		if((snakeX[i]-1)==snakeX[i+1]){//蛇身操作 
 			snakeX[i]-=1;
 		}
-		if((snakeY[i]+1)==snakeY[i+1]){//矰ō巨 
+		if((snakeY[i]+1)==snakeY[i+1]){//蛇身操作 
 			snakeY[i]+=1;
 		}
-		if((snakeY[i]-1)==snakeY[i+1]){//矰ō巨 
+		if((snakeY[i]-1)==snakeY[i+1]){//蛇身操作 
 			snakeY[i]-=1;
 		}
 	}
-	if(x==1){//矰繷巨 
+	if(x==1){//蛇頭操作 
 		snakeX[snakeLength-1]+=1;	
 	}
-	else if(x==-1){//矰繷巨 
+	else if(x==-1){//蛇頭操作 
 		snakeX[snakeLength-1]-=1;
 	}
-	else{//X=0 ぃ簿笆薄猵 
+	else{//X=0 不移動的情況 
 	}
-	if(y==1){//矰繷巨 
+	if(y==1){//蛇頭操作 
 		snakeY[snakeLength-1]+=1;
 	}
-	else if(y==-1){//矰繷巨 
+	else if(y==-1){//蛇頭操作 
 		snakeY[snakeLength-1]-=1;
 	}
-	else{//Y=0 ぃ簿笆薄猵 
+	else{//Y=0 不移動的情況 
 	}
 }
 
-//笴栏挡耞 (疾鲤┪琌矰繷疾ō砰) 
+//遊戲結束的判斷 (撞到牆或是蛇頭撞到身體) 
 int gameover(void){
 	int i = 0;
-	if(snakeX[snakeLength-1]==0 || snakeX[snakeLength-1]==11){//娩耞 
+	if(snakeX[snakeLength-1]==0 || snakeX[snakeLength-1]==11){//邊界判斷 
 		return 1; 
 	}
-	else if(snakeY[snakeLength-1]==0 || snakeY[snakeLength-1]==11){//娩耞 
+	else if(snakeY[snakeLength-1]==0 || snakeY[snakeLength-1]==11){//邊界判斷 
 		return 1;
 	}
-	else {//矰繷疾ō砰耞 
+	else {//蛇頭撞身體判斷 
 		for(i=0;i<snakeLength-1;i++){
 			if(snakeX[i] == snakeX[snakeLength-1] && snakeY[i] == snakeY[snakeLength-1]){
 				return 1;
@@ -164,17 +164,17 @@ int gameover(void){
 	return 0;
 }
 
-//竚
+//放置食物
 void put_money(int XY[]){
 	int i = 0;
-	srand(time(0));//繦诀竚 ㄏノ皐纗竚 [0]X [1]Y
-	XY[0] = rand() % 10 +1;//娩柑だ皌 
-	XY[1] = rand() % 10 +1;//娩柑 
-	for(i=0;i<snakeLength;i++){//耞穦ぃ穦籔矰 穦杠穝だ竚 ぃ穦 
+	srand(time(0));//隨機食物位置 使用指針儲存位置 [0]代表X [1]代表Y
+	XY[0] = rand() % 10 +1;//在邊界裡分配食物 
+	XY[1] = rand() % 10 +1;//在邊界裡 
+	for(i=0;i<snakeLength;i++){//判斷食物會不會與蛇同位 會的話重新分食物位置 直到不會 
 		while(1){
 			if(XY[0]==snakeX[i] || XY[1]==snakeY[i]){
-				XY[0] = rand() %10 +1; //X禸竚110 
-				XY[1] = rand() %10 +1;  //Y禸竚110 
+				XY[0] = rand() %10 +1; //X軸能放置長度為1到10 
+				XY[1] = rand() %10 +1;  //Y軸能放置長度為1到10 
 			}
 			else if(XY[0]!=snakeX[i] && XY[1]!=snakeY[i]){
 				break;
@@ -183,13 +183,13 @@ void put_money(int XY[]){
 	}
 }
 
-//矰
+//蛇吃到食物
 void eat(void){
-	if(snakeX[snakeLength-1]==XY[0] && snakeY[snakeLength-1]==XY[1]){//狦  
-		put_money(XY); //穝だ皌
-		//snakeLength+=1; //矰+1 
+	if(snakeX[snakeLength-1]==XY[0] && snakeY[snakeLength-1]==XY[1]){//如果吃到食物  
+		put_money(XY); //重新分配食物
+		//snakeLength+=1; //蛇的長度+1 
 	}
-	else{//⊿┮ぃ巨 
+	else{//沒吃到所以不操作 
 		
 	}
 } 
