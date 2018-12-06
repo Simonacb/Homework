@@ -29,5 +29,7 @@
 
 ### 最后付上游戏的gif
 
+<img src="images/lab2game1.gif">
+
 
 
