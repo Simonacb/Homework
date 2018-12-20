@@ -20,8 +20,8 @@ void output(void);
 int gameover(void);
 //打印地圖 
 void print_map(void);
-
-void eat(void);
+//吃食物 
+int eat(void);
 
 char map[12][12] = 
 	{"************",//1
@@ -61,7 +61,6 @@ int main(){
 				snakeMove(0,-1);
 				break;
 		}
-		eat();
 		print_map();
 	}
 	printf("Game Over");
@@ -112,7 +111,9 @@ void print_map(void){
 
 //控制蛇的走動 蛇的身體會根據前面的身體來判斷走向,蛇頭自己會單獨的按輸入的指令而走 
 void snakeMove(int x,int y){
-	int i = 0;
+	int i = 0, midX = 0, midY = 0;//midX和midY 記錄蛇尾位置 方便了吃到食物後的增尾操作
+	midX = snakeX[0];
+	midY = snakeY[0]; 
 	for(i=0;i<snakeLength-1;i++){
 		if((snakeX[i]+1)==snakeX[i+1]){//蛇身操作
 			snakeX[i]+=1;
@@ -143,6 +144,14 @@ void snakeMove(int x,int y){
 	}
 	else{//Y=0 不移動的情況 
 	}
+	if(eat()){//如果吃到食物 加長蛇的物理長度 
+		for(i=snakeLength-2;i>=0;i--){
+			snakeX[i+1] = snakeX[i];
+			snakeY[i+1] = snakeY[i]; 
+		}
+		snakeX[0] = midX;
+		snakeY[0] = midY;
+	} 
 }
 
 //遊戲結束的判斷 (撞到牆或是蛇頭撞到身體) 
@@ -184,12 +193,13 @@ void put_money(int XY[]){
 }
 
 //蛇吃到食物
-void eat(void){
-	if(snakeX[snakeLength-1]==XY[0] && snakeY[snakeLength-1]==XY[1]){//如果吃到食物  
+int eat(void){
+	if(snakeX[snakeLength-1]==XY[0] && snakeY[snakeLength-1]==XY[1]){//判斷有沒有吃到食物 
 		put_money(XY); //重新分配食物
-		//snakeLength+=1; //蛇的長度+1 
+		snakeLength +=1;//加長蛇的邏輯長度 
+		return 1; 
 	}
-	else{//沒吃到所以不操作 
-		
+	else{
+		return 0;
 	}
 } 
