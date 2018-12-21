@@ -68,7 +68,7 @@
 <img style="float:left; width:198px" src="images/vegetable2.1.jpg">
 <h3 style="margin-top:180px;"><--我</h3>
 
-<h3 class="h3">实际演示</h3>
+<h3 class="h3" style="clear:both;">实际演示</h3>
 <img src="images/snake_example.gif">
 <h3 class="h3content">这里我把预测路数设为2，可见智能蛇跑到被堵塞的路之前因为没路走了就停了下来</h3>
 
