@@ -26,12 +26,13 @@
 }
 .list {
     font-size:18px;
+    font-weight:bold;
 }
 </style>
 
 <h2 id="anime" style="text-align:center;">C语言实现贪吃蛇人机游戏总结（上）</h2>
 <img src="images/snake.gif" style="padding-left:65px;">
-<h3 class="h3">目标<h3>
+<h3 class="h3">目标</h3>
 <ul class="list">
     <li>创造一个会自己走动的蛇</li>
     <li>让蛇自动判断会不会被堵塞</li>
@@ -59,7 +60,7 @@
 <h3 class="h3content">为了不让智能蛇走进堵塞的路<br/>要使用DFS（深度优先算法）+BFS（广度优先算法）</h3>
 <h3 class="h3content">具体思路：遍历的问题，从蛇现在的可活动方向去判断走了那些可活动方向之后会不会卡了<br/>参考链结：</h3>
 
-[BFS与DFS的图的算法原理](https://www.jianshu.com/p/70952b51f0c8)
+![BFS与DFS的图的算法原理](https://www.jianshu.com/p/70952b51f0c8)
 
 <h3 class="h3content">就算我知道了思路了，就是不会写成代码的形式，导致用了差不多十个小时去写那个递归的代码（再去对比我那些优秀的室友，真的要跪地v_v）</h3>
 <h3 style="float:left;margin-top:50px">大佬--></h3>
