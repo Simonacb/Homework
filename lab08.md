@@ -26,6 +26,6 @@
 <p>但是这些只是大的步骤，是解决问题的核心。当中注水会涉及到计算水量，控制进水口，而浸洗、洗涤、甩干涉及到控制转盘，排水涉及到控制排水口，那么这些就是实际解决问题核心的事</p>
 
 <p>参考资料</p>
-[Top-down Design](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design){:target="_blank"}
+[Top-down Design](http://en.wikipedia.org/wiki/Top-down_and_bottom-up_design){:target="_blank"}
 
 

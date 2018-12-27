@@ -22,4 +22,4 @@
 <h3 style="color:#666666;font-style:bold;">最后，所有参数方面的比较只能基于相同的架构下。不同架构的显卡即使从参数上看很接近，实际性能可能会大相径庭，不同架构的显卡可以看评测来比较性能。</h3>
 
 <p style="color:black;">参考资料：</p>
-[决定显卡性能的比较重要的几个参数是什么？](https://blog.csdn.net/xiaoyafang123/article/details/79462080){:target="_blank"}
+[决定显卡性能的比较重要的几个参数是什么？](http://blog.csdn.net/xiaoyafang123/article/details/79462080){:target="_blank"}

@@ -21,4 +21,4 @@
 
 <h2 id="anime" style="text-align:center;font-size:30px;">贪吃蛇实验</h2>
 
-[代码位置](https://github.com/Simonacb/SimonHW/tree/gh-pages){:target="_blank"}
+[代码位置](http://github.com/Simonacb/SimonHW/tree/gh-pages){:target="_blank"}
