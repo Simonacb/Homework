@@ -21,8 +21,6 @@ $$ \lim_{n\rightarrow0}\frac{\sqrt[2]{1+x^2}-1}{1-cos(x)} $$
 <p>结果</p>
 <img src="images/limit.jpg">
 <p>求隐函数微分</p>
-
-
 $$ y = x + \arctan y $$
 
 <p>结果</p>
